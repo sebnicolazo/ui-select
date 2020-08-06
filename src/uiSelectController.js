@@ -47,14 +47,7 @@ uis.controller('uiSelectCtrl',
   ctrl.$element = $element;
 
   // Use $injector to check for $animate and store a reference to it
-  ctrl.$animate = (function () {
-    try {
-      return $injector.get('$animate');
-    } catch (err) {
-      // $animate does not exist
-      return null;
-    }
-  })();
+  ctrl.$animate = null;
 
   ctrl.searchInput = $element.querySelectorAll('input.ui-select-search');
   if (ctrl.searchInput.length !== 1) {
